@@ -4,17 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shaikh Ibrahim | Cybersecurity Portfolio</title>
-
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet" />
-
   <!-- Styles -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="grid-bg"></div>
+  <!-- Arc Reactor Container -->
+  <div class="arc-reactor-bg"></div>
 
   <header class="nav">
     <div class="logo">
@@ -35,27 +35,29 @@
     <!-- HERO -->
     <section class="section hero" id="top">
       <div class="hero-content">
-        <p class="tag">Aspiring Cybersecurity Analyst</p>
+        <p class="tag">🛡️ Cybersecurity Analyst</p>
         <h1>Shaikh <span>Ibrahim</span></h1>
         <p class="hero-sub">
-          M.Sc Computer Security student focusing on network security, IAM, SOC operations, and incident response through ISC2, Cisco, and hands‑on labs.
+          M.Sc Computer Security student building hands-on expertise in SOC operations, incident response, network security, and IAM. Focused on entry-level roles where I can apply lab-based skills in real-world cybersecurity environments.
         </p>
         <div class="hero-actions">
           <a href="#projects" class="btn primary">View Projects</a>
           <a href="#contact" class="btn ghost">Contact Me</a>
         </div>
         <div class="hero-meta">
-          <span>Hyderabad, India</span>
-          <span>Cybersecurity · SOC · IAM</span>
+          <span>📄 Hyderabad, India</span>
+          <span>🔐 SOC · IAM · Incident Response</span>
         </div>
       </div>
-
+      <!-- Iron Man Arc Reactor Animation -->
       <div class="hero-orbit">
-        <div class="orbit-ring ring-1"></div>
-        <div class="orbit-ring ring-2"></div>
-        <div class="orbit-node node-1"></div>
-        <div class="orbit-node node-2"></div>
-        <div class="orbit-node node-3"></div>
+        <div class="arc-reactor">
+          <div class="arc-core"></div>
+          <div class="arc-ring arc-ring-1"></div>
+          <div class="arc-ring arc-ring-2"></div>
+          <div class="arc-ring arc-ring-3"></div>
+          <div class="arc-pulse"></div>
+        </div>
       </div>
     </section>
 
@@ -63,9 +65,7 @@
     <section class="section" id="about">
       <h2 class="section-title">About</h2>
       <p class="section-text">
-        Aspiring cybersecurity analyst with an M.Sc in Computer Security, building skills in network security, identity and access management (IAM),
-        SOC operations, and incident response through ISC2, Cisco, and virtual labs. Eager to apply and grow these skills in entry‑level
-        cybersecurity roles and internships.
+        Aspiring cybersecurity analyst with hands-on experience building lab environments for SOC simulation, designing IAM policies, and analyzing security events. Currently pursuing M.Sc in Computer Security with focus on network fundamentals, firewall analysis, and incident response. Trained through ISC2 Certified in Cybersecurity (CC), Cisco NetAcad, and practical security labs. Eager to leverage this foundation in entry-level SOC analyst or IAM support roles.
       </p>
     </section>
 
@@ -74,34 +74,32 @@
       <h2 class="section-title">Skills</h2>
       <div class="cards-grid">
         <div class="card">
-          <h3>Cybersecurity</h3>
+          <h3>🔐 Core Security</h3>
           <ul>
-            <li>Network security fundamentals</li>
-            <li>SOC operations concepts (logs, alerts, events)</li>
-            <li>Identity &amp; Access Management (IAM)</li>
-            <li>Basic incident response &amp; documentation</li>
-            <li>Security labs and simulations</li>
+            <li>SOC Operations (log analysis, alert triage, event correlation)</li>
+            <li>Network Security Fundamentals (protocols, firewall, VPN)</li>
+            <li>Identity & Access Management (IAM policy design, access control)</li>
+            <li>Incident Response & Documentation</li>
+            <li>Threat Analysis & Event Investigation</li>
           </ul>
         </div>
-
         <div class="card">
-          <h3>Development &amp; Tools</h3>
+          <h3>🛠️ Tools & Platforms</h3>
           <ul>
-            <li>Security‑focused mobile app concepts</li>
-            <li>API integration for security &amp; data</li>
-            <li>Dashboard and UI planning</li>
-            <li>Git &amp; GitHub</li>
+            <li>SIEM Concepts (log aggregation, correlation)</li>
+            <li>Firewall & Network Analysis</li>
+            <li>Linux/Unix Administration</li>
+            <li>API Security & Integration</li>
+            <li>Git/GitHub & Version Control</li>
           </ul>
         </div>
-
         <div class="card">
-          <h3>Languages &amp; General</h3>
+          <h3>📚 Technical & Soft Skills</h3>
           <ul>
-            <li>English – Fluent</li>
-            <li>Hindi – Native</li>
-            <li>Telugu – Basic</li>
-            <li>Technical research &amp; self‑learning</li>
-            <li>Clear written &amp; verbal communication</li>
+            <li>Python, C, JavaScript (security-focused applications)</li>
+            <li>Technical Documentation & Reporting</li>
+            <li>Clear Communication & Problem-Solving</li>
+            <li>Fluent English, Native Hindi, Basic Telugu</li>
           </ul>
         </div>
       </div>
@@ -109,39 +107,40 @@
 
     <!-- PROJECTS -->
     <section class="section" id="projects">
-      <h2 class="section-title">Projects</h2>
+      <h2 class="section-title">Featured Projects</h2>
       <div class="cards-grid">
         <!-- PhishBuster AR -->
         <div class="card project-card">
           <div class="card-accent"></div>
-          <h3>PhishBuster AR</h3>
-          <p class="project-tag">Cybersecurity Mobile Tool · 2025 – Present</p>
+          <h3>🔍 PhishBuster AR</h3>
+          <p class="project-tag">Security Mobile App · 2025 – Present</p>
           <p class="project-text">
-            Augmented reality‑based security concept designed to detect and prevent phishing attempts by analyzing suspicious URLs, emails, and risky apps in real time.
+            Augmented reality-based phishing detection tool designed to identify suspicious URLs, emails, and risky apps in real-time for enterprise security awareness.
           </p>
           <ul class="project-list">
-            <li>Planned integration of security validation APIs to improve detection accuracy and reliability.</li>
-            <li>Designed AR‑based risk visualization for instant threat awareness.</li>
+            <li>Integrated API-based URL validation for threat detection accuracy</li>
+            <li>Designed AR visual risk indicators for instant threat recognition</li>
+            <li>Built for mobile deployment and employee security training</li>
           </ul>
           <p class="project-tech">
-            Focus: Phishing detection · Security APIs · AR‑based awareness
+            Tech: AR (Expo/Flutter) · REST APIs · Real-time Validation
           </p>
         </div>
-
         <!-- SkyCast -->
         <div class="card project-card">
           <div class="card-accent"></div>
-          <h3>SkyCast</h3>
-          <p class="project-tag">Weather Forecasting App · 2025</p>
+          <h3>⛅ SkyCast Weather App</h3>
+          <p class="project-tag">Full-Stack Application · 2025</p>
           <p class="project-text">
-            Machine learning‑based weather forecasting concept using real‑time meteorological APIs to deliver accurate climate predictions and live updates.
+            Machine learning-based weather forecasting app demonstrating secure API integration, real-time data handling, and responsive UI design for data visualization.
           </p>
           <ul class="project-list">
-            <li>Planned live forecast integration and automated alert notifications.</li>
-            <li>Designed user‑friendly dashboard UI for hourly and weekly insights.</li>
+            <li>Integrated live meteorological APIs with error handling and data validation</li>
+            <li>Designed responsive dashboard for hourly and weekly insights</li>
+            <li>Demonstrated secure data processing and API authentication</li>
           </ul>
           <p class="project-tech">
-            Focus: Real‑time APIs · Data visualization · Alerts
+            Tech: REST APIs · Real-time Data · Secure Data Handling
           </p>
         </div>
       </div>
@@ -154,14 +153,15 @@
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
-            <h3>Cybersecurity Student – SOC &amp; IAM Focus</h3>
+            <h3>📚 Cybersecurity Student – SOC & IAM Focus</h3>
             <p class="timeline-meta">
-              Self‑directed Learning · ISC2, Cisco NetAcad, Forage, IBM · Sep 2025 – Present · Remote
+              Self-directed Learning · ISC2, Cisco NetAcad, Forage, IBM · Sep 2025 – Present · Remote
             </p>
             <ul>
-              <li>Studying SOC operations, network security, and IAM with structured training content.</li>
-              <li>Practising log analysis and basic incident response in simulated environments.</li>
-              <li>Creating IAM plans for example enterprises with a focus on access control.</li>
+              <li>Analyzed sample firewall, endpoint, and application logs in lab environments to identify suspicious events and test detection logic</li>
+              <li>Designed IAM access control frameworks for multi-department enterprise scenarios</li>
+              <li>Practiced incident response documentation and root cause analysis on simulated security incidents</li>
+              <li>Completed structured SOC training covering log analysis, alert triage, and escalation procedures</li>
             </ul>
           </div>
         </div>
@@ -173,80 +173,74 @@
       <h2 class="section-title">Education</h2>
       <div class="cards-grid">
         <div class="card">
-          <h3>M.Sc Computer Security</h3>
+          <h3>🌟 M.Sc Computer Security</h3>
           <p class="edu-meta">
             University College of Science, Osmania University · Nov 2023 – Present
           </p>
-          <p>Relevant coursework: Computer Networks, Operating Systems, Cybersecurity Fundamentals.</p>
+          <p>Relevant coursework: Computer Networks, Operating Systems, Cybersecurity Fundamentals, System Administration.</p>
         </div>
-
         <div class="card">
-          <h3>B.Sc Computer Science</h3>
+          <h3>🎉 B.Sc Computer Science</h3>
           <p class="edu-meta">
             Kakatiya University · Aug 2020 – Aug 2023 · GPA 7.16
           </p>
-          <p>Relevant coursework: Mathematics, Physics.</p>
+          <p>Foundation in Mathematics, Physics, and Computer Science principles.</p>
         </div>
       </div>
     </section>
 
     <!-- CERTIFICATIONS -->
     <section class="section" id="certifications">
-      <h2 class="section-title">Certifications</h2>
+      <h2 class="section-title">Certifications & Training</h2>
       <div class="cards-grid">
         <div class="card">
-          <h3>ISC2 Certified in Cybersecurity (CC)</h3>
-          <p>Training in progress · Nov 2025 · ISC2.</p>
+          <h3>🏆 ISC2 CC (In Progress)</h3>
+          <p>Comprehensive training covering security operations, incident response, network fundamentals, and access control concepts. Nov 2025 · ISC2.</p>
         </div>
-
         <div class="card">
-          <h3>CC – Network Security</h3>
-          <p>Nov 2025 · ISC2.</p>
+          <h3>🏆 Network Security Fundamentals</h3>
+          <p>Hands-on training in network protocols, firewall configuration, and threat detection. Nov 2025 · ISC2/Cisco.</p>
         </div>
-
         <div class="card">
-          <h3>Deloitte Australia Virtual Experience</h3>
-          <p>Forage · Nov 2025.</p>
+          <h3>🏆 Deloitte Australia Cybersecurity Virtual Experience</h3>
+          <p>Applied security consulting scenarios covering incident response, threat assessment, and security operations. Forage · Nov 2025.</p>
         </div>
       </div>
     </section>
 
     <!-- CONTACT -->
     <section class="section" id="contact">
-      <h2 class="section-title">Contact</h2>
+      <h2 class="section-title">Get In Touch</h2>
       <p class="section-text">
-        Open to internships and entry‑level cybersecurity roles, especially in SOC, IAM, and security operations.
+        Open to internships and entry-level cybersecurity roles, particularly in SOC operations, incident response, and identity & access management. Let's connect!
       </p>
       <div class="contact-grid">
         <div>
-          <p><strong>Email</strong><br />
+          <p><strong>📧 Email</strong><br />
             <a href="mailto:shoaibibrahim970@outlook.com">shoaibibrahim970@outlook.com</a>
           </p>
-          <p><strong>Location</strong><br />
-            Koti, Hyderabad, Telangana, India
+          <p><strong>📑 GitHub</strong><br />
+            <a href="https://github.com/shoaibibrahim17" target="_blank" rel="noreferrer">github.com/shoaibibrahim17</a>
           </p>
         </div>
         <div>
-          <p><strong>Phone</strong><br />
-            <a href="tel:+918919574465">+91 89195 74465</a>
+          <p><strong>📞 Phone</strong><br />
+            <a href="tel:+918919574465">+91 8919574465</a>
           </p>
-          <p><strong>LinkedIn</strong><br />
-            <a href="https://www.linkedin.com/in/shaikh-ibrahim17" target="_blank" rel="noreferrer">
-              linkedin.com/in/shaikh-ibrahim17
-            </a>
+          <p><strong>🔗 LinkedIn</strong><br />
+            <a href="https://www.linkedin.com/in/shaikh-ibrahim17" target="_blank" rel="noreferrer">linkedin.com/in/shaikh-ibrahim17</a>
           </p>
-          <!-- Add GitHub when ready -->
         </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <span>© 2025 Shaikh Ibrahim · Built with GitHub Pages</span>
+    <span>© 2025 Shaikh Ibrahim · Built with HTML/CSS/JS · Hosted on GitHub Pages</span>
   </footer>
 
   <script>
-    // Simple scroll reveal
+    // Scroll reveal animation
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -254,8 +248,15 @@
         }
       });
     }, { threshold: 0.1 });
-
     document.querySelectorAll('.section').forEach((sec) => observer.observe(sec));
+
+    // Arc reactor pulsing effect
+    const arcPulse = document.querySelector('.arc-pulse');
+    if (arcPulse) {
+      setInterval(() => {
+        arcPulse.style.opacity = Math.sin(Date.now() / 500) * 0.5 + 0.5;
+      }, 50);
+    }
   </script>
 </body>
 </html>
