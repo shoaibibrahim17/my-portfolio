@@ -294,30 +294,8 @@
     <span>© 2025 Shaikh Ibrahim · Built with HTML/CSS/JS · Hosted on GitHub Pages</span>
   </footer>
 
-  <script>
-    // Scroll reveal animation
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      },
-      { threshold: 0.18 }
-    );
+  <script src="script.js"></script>
 
-    document
-      .querySelectorAll('.section')
-      .forEach((sec) => observer.observe(sec));
-
-    // Arc reactor pulsing effect
-    const arcPulse = document.querySelector('.arc-pulse');
-    if (arcPulse) {
-      setInterval(() => {
-        arcPulse.style.opacity = Math.sin(Date.now() / 500) * 0.5 + 0.5;
-      }, 50);
-    }
-  </script>
+  
 </body>
 </html>
