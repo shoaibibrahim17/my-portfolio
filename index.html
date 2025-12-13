@@ -9,19 +9,23 @@
 
   <title>Shaikh Ibrahim | Cybersecurity Portfolio</title>
 
-  <!-- FAVICON (OPTIONAL) -->
-  <!-- <link rel="icon" href="favicon.ico" /> -->
+  <!-- FAVICON -->
+  <link rel="icon" href="favicon.ico" />
 
   <!-- GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Orbitron:wght@500;700&display=swap"
+    rel="stylesheet"
+  />
 
   <!-- STYLES -->
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+  <a href="#top" class="skip-to-content">Skip to main content</a>
   <div class="grid-bg" aria-hidden="true"></div>
 
   <!-- NAVIGATION -->
@@ -29,7 +33,7 @@
     <div class="logo" aria-label="Homepage logo">
       SI<span>.</span>
     </div>
-    <nav aria-label="Primary navigation">
+    <nav class="nav-desktop" aria-label="Primary navigation">
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
@@ -38,7 +42,22 @@
       <a href="#certifications">Certifications</a>
       <a href="#contact">Contact</a>
     </nav>
+    <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">
+      <span class="hamburger"></span>
+    </button>
   </header>
+
+  <div class="nav-mobile-container">
+    <nav class="nav-mobile" aria-label="Mobile navigation">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
 
   <main id="top">
     <!-- HERO -->
@@ -121,35 +140,39 @@
       <h2 class="section-title" id="projects-title">Projects</h2>
       <div class="cards-grid">
         <article class="card project-card">
-          <div class="card-accent" aria-hidden="true"></div>
-          <h3>PhishBuster AR</h3>
-          <p class="project-tag">Cybersecurity Mobile Tool · 2025 – Present</p>
-          <p class="project-text">
-            Augmented reality-based security concept designed to detect and prevent phishing attempts by analyzing suspicious URLs, emails, and risky apps in real time.
-          </p>
-          <ul class="project-list">
-            <li>Planned integration of security validation APIs to improve detection accuracy.</li>
-            <li>Designed AR-based risk visualization for instant threat awareness.</li>
-          </ul>
-          <p class="project-tech">
-            Focus: Phishing detection · Security APIs · AR-based awareness
-          </p>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="project-link">
+            <div class="card-accent" aria-hidden="true"></div>
+            <h3>PhishBuster AR</h3>
+            <p class="project-tag">Cybersecurity Mobile Tool · 2025 – Present</p>
+            <p class="project-text">
+              Augmented reality-based security concept designed to detect and prevent phishing attempts by analyzing suspicious URLs, emails, and risky apps in real time.
+            </p>
+            <ul class="project-list">
+              <li>Planned integration of security validation APIs to improve detection accuracy.</li>
+              <li>Designed AR-based risk visualization for instant threat awareness.</li>
+            </ul>
+            <p class="project-tech">
+              Focus: Phishing detection · Security APIs · AR-based awareness
+            </p>
+          </a>
         </article>
 
         <article class="card project-card">
-          <div class="card-accent" aria-hidden="true"></div>
-          <h3>SkyCast</h3>
-          <p class="project-tag">Weather Forecasting App · 2025</p>
-          <p class="project-text">
-            Machine learning-based weather forecasting concept using real-time meteorological APIs to deliver accurate climate predictions.
-          </p>
-          <ul class="project-list">
-            <li>Planned live forecast integration and automated alert notifications.</li>
-            <li>Designed user-friendly dashboard UI for insights.</li>
-          </ul>
-          <p class="project-tech">
-            Focus: Real-time APIs · Data visualization · Alerts
-          </p>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="project-link">
+            <div class="card-accent" aria-hidden="true"></div>
+            <h3>SkyCast</h3>
+            <p class="project-tag">Weather Forecasting App · 2025</p>
+            <p class="project-text">
+              Machine learning-based weather forecasting concept using real-time meteorological APIs to deliver accurate climate predictions.
+            </p>
+            <ul class="project-list">
+              <li>Planned live forecast integration and automated alert notifications.</li>
+              <li>Designed user-friendly dashboard UI for insights.</li>
+            </ul>
+            <p class="project-tech">
+              Focus: Real-time APIs · Data visualization · Alerts
+            </p>
+          </a>
         </article>
       </div>
     </section>
@@ -256,6 +279,20 @@
     );
 
     document.querySelectorAll('.section').forEach(section => observer.observe(section));
+
+    const navToggle = document.querySelector('.nav-toggle');
+    const body = document.body;
+
+    navToggle.addEventListener('click', () => {
+      body.classList.toggle('nav-open');
+    });
+
+    const mobileNavLinks = document.querySelectorAll('.nav-mobile a');
+    mobileNavLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        body.classList.remove('nav-open');
+      });
+    });
   </script>
 </body>
 </html>

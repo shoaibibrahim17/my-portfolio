@@ -6,6 +6,16 @@
   --text: #f5f7ff;
   --muted: #9aa6d9;
   --danger: #ff4b81;
+  
+  --font-primary: "Space Grotesk", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display: "Orbitron", system-ui;
+
+  --nav-height: 64px;
+
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  
   --radius: 14px;
   --shadow-neon: 0 0 18px rgba(0, 245, 255, 0.6);
   --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.65);
@@ -22,7 +32,7 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  font-family: "Space Grotesk", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: var(--font-primary);
   color: var(--text);
   background:
     radial-gradient(circle at top, #04101f 0, #02040a 55%, #000000 100%);
@@ -32,7 +42,7 @@ body {
 main {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 6rem 1.5rem 4rem;
+  padding: 6rem var(--space-md) 4rem;
   position: relative;
   z-index: 1;
 }
@@ -45,6 +55,32 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+/* SKIP TO CONTENT */
+.skip-to-content {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip-to-content:focus {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  padding: 0.5rem var(--space-sm);
+  background: var(--primary);
+  color: var(--bg);
+  font-weight: 600;
+  border-radius: 0 0 var(--radius) var(--radius);
+  z-index: 20;
+}
+
 
 /* BACKGROUND GRID */
 .grid-bg {
@@ -63,8 +99,8 @@ a:hover {
 .nav {
   position: fixed;
   inset: 0 0 auto 0;
-  height: 64px;
-  padding: 0 1.5rem;
+  height: var(--nav-height);
+  padding: 0 var(--space-md);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -75,7 +111,7 @@ a:hover {
 }
 
 .logo {
-  font-family: "Orbitron", system-ui;
+  font-family: var(--font-display);
   font-size: 1.3rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -86,12 +122,12 @@ a:hover {
   color: var(--secondary);
 }
 
-.nav nav {
+.nav-desktop {
   display: flex;
   gap: 1.4rem;
 }
 
-.nav a {
+.nav-desktop a {
   font-size: 0.85rem;
   color: var(--muted);
   text-transform: uppercase;
@@ -99,14 +135,101 @@ a:hover {
   font-weight: 600;
 }
 
-.nav a:hover {
+.nav-desktop a:hover {
+  color: var(--primary);
+}
+
+/* MOBILE NAV */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.hamburger {
+  display: block;
+  position: relative;
+  width: 24px;
+  height: 2px;
+  background: var(--primary);
+  transition: transform 0.3s ease;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--primary);
+  transition: transform 0.3s ease, top 0.3s ease;
+}
+
+.hamburger::before {
+  top: -8px;
+}
+
+.hamburger::after {
+  top: 8px;
+}
+
+body.nav-open .hamburger {
+  transform: rotate(45deg);
+}
+
+body.nav-open .hamburger::before {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+body.nav-open .hamburger::after {
+  top: 0;
+}
+
+.nav-mobile-container {
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 3, 10, 0.9);
+  backdrop-filter: blur(16px);
+  z-index: 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(100%);
+  transition: transform 0.4s ease-in-out;
+}
+
+body.nav-open .nav-mobile-container {
+  transform: translateX(0);
+}
+
+.nav-mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.nav-mobile a {
+  font-size: 1.2rem;
+  color: var(--text);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+  padding: 0.5rem var(--space-sm);
+}
+
+.nav-mobile a:hover {
   color: var(--primary);
 }
 
 /* SECTIONS */
 .section {
   margin-top: 4rem;
-  padding: 2.4rem 2rem;
+  padding: 2.4rem var(--space-lg);
   background:
     radial-gradient(circle at top left, rgba(0, 245, 255, 0.08), transparent 50%),
     linear-gradient(145deg, rgba(5, 9, 30, 0.96), rgba(3, 4, 15, 0.98));
@@ -134,7 +257,7 @@ a:hover {
 
 .section-title {
   margin: 0 0 0.8rem;
-  font-family: "Orbitron", system-ui;
+  font-family: var(--font-display);
   font-size: 1.4rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -159,7 +282,7 @@ a:hover {
 .hero-content h1 {
   font-size: 2.6rem;
   margin: 0.2rem 0 0.8rem;
-  font-family: "Orbitron", system-ui;
+  font-family: var(--font-display);
   letter-spacing: 0.05em;
 }
 
@@ -189,8 +312,8 @@ a:hover {
 
 .hero-actions {
   display: flex;
-  gap: 1rem;
-  margin-bottom: 1rem;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
 }
 
 .btn {
@@ -224,6 +347,15 @@ a:hover {
   transform: translateY(-1px) scale(1.02);
   box-shadow: var(--shadow-neon);
 }
+
+/* FOCUS VISIBILITY */
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible {
+  outline: 2px dashed var(--primary);
+  outline-offset: 4px;
+}
+
 
 /* ORBIT VISUAL */
 .hero-orbit {
@@ -305,13 +437,26 @@ a:hover {
 .project-card {
   border: 1px solid transparent;
   border-image: linear-gradient(130deg, var(--primary), var(--secondary)) 1;
+  padding: 0;
 }
+
+.project-link {
+  display: block;
+  padding: 1.3rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+.project-link:hover {
+  text-decoration: none;
+}
+
 
 /* TIMELINE */
 .timeline {
   margin-top: 1.3rem;
   border-left: 1px dashed rgba(0, 245, 255, 0.32);
-  padding-left: 1.5rem;
+  padding-left: var(--space-md);
 }
 
 /* CONTACT */
@@ -319,13 +464,13 @@ a:hover {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1.4rem;
-  margin-top: 1rem;
+  margin-top: var(--space-sm);
 }
 
 /* FOOTER */
 .footer {
   text-align: center;
-  padding: 1.5rem 1rem 2rem;
+  padding: var(--space-md) var(--space-sm) var(--space-lg);
   font-size: 0.8rem;
   color: var(--muted);
 }
@@ -348,12 +493,18 @@ a:hover {
     order: -1;
   }
 
-  .nav nav {
+  .nav-desktop {
     display: none;
   }
 
+  .nav-toggle {
+.project-card {
+  padding: 0;
+}
+    display: block;
+  }
+
   main {
-    padding-top: 5.5rem;
+    padding-top: calc(var(--nav-height) - 0.5rem);
   }
 }
-
