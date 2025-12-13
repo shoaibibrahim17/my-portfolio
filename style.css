@@ -101,6 +101,11 @@ a:hover {
   font-weight: 600;
 }
 
+/* active nav helper (optional, use .is-active in HTML/JS) */
+.nav a.is-active {
+  color: var(--primary);
+}
+
 .nav a:hover {
   color: var(--primary);
 }
@@ -150,6 +155,29 @@ a:hover {
   margin: 0.3rem 0 0;
   color: var(--muted);
   line-height: 1.6;
+}
+
+/* Nice bullets for Services / Skills / etc. */
+.list {
+  list-style: none;
+  margin: 0.6rem 0 0;
+  padding: 0;
+}
+
+.list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+  margin-bottom: 0.35rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.list li::before {
+  content: "•";
+  color: var(--primary);
+  flex-shrink: 0;
+  margin-top: 0.05rem;
 }
 
 /* HERO */
