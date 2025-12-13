@@ -250,7 +250,9 @@ a:hover {
   background: radial-gradient(circle at center, rgba(0, 245, 255, 0.2), transparent 60%);
   box-shadow: 0 0 40px rgba(0, 245, 255, 0.4);
   overflow: hidden;
+  animation: reactorSpin 18s linear infinite, reactorPulse 3s ease-in-out infinite;
 }
+
 
 .orbit-ring {
   position: absolute;
@@ -320,6 +322,32 @@ a:hover {
     transform: rotate(360deg) translateY(-50px) rotate(-360deg);
   }
 }
+@keyframes reactorSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes reactorPulse {
+  0%, 100% { box-shadow: 0 0 30px rgba(0, 245, 255, 0.35); }
+  50%      { box-shadow: 0 0 55px rgba(176, 38, 255, 0.7); }
+}
+
+.node-1,
+.node-2,
+.node-3 {
+  width: 16px;
+  height: 16px;
+}
+
+.node-1 { animation: orbit1 7s linear infinite; }
+.node-2 { animation: orbit2 9s linear infinite; }
+.node-3 { animation: orbit3 11s linear infinite; }
+
+.hero-orbit:hover {
+  animation-duration: 12s, 2s;
+  box-shadow: 0 0 65px rgba(0, 245, 255, 0.9);
+}
+
 
 /* CARDS GRID */
 .cards-grid {
@@ -337,6 +365,31 @@ a:hover {
   position: relative;
   overflow: hidden;
 }
+.section.visible .card {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: cardFadeUp 0.6s ease-out forwards;
+}
+
+.section.visible .card:nth-child(2) {
+  animation-delay: 0.08s;
+}
+
+.section.visible .card:nth-child(3) {
+  animation-delay: 0.16s;
+}
+
+@keyframes cardFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 .card::before {
   content: "";
