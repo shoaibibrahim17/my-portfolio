@@ -1,26 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- BASIC META -->
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Shaikh Ibrahim – Aspiring Cybersecurity Analyst specializing in SOC operations, IAM, network security, and incident response." />
+  <meta name="author" content="Shaikh Ibrahim" />
+
   <title>Shaikh Ibrahim | Cybersecurity Portfolio</title>
 
-  <!-- Fonts -->
+  <!-- FAVICON (OPTIONAL) -->
+  <!-- <link rel="icon" href="favicon.ico" /> -->
+
+  <!-- GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet" />
 
-  <!-- Styles -->
+  <!-- STYLES -->
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <div class="grid-bg"></div>
 
+<body>
+  <div class="grid-bg" aria-hidden="true"></div>
+
+  <!-- NAVIGATION -->
   <header class="nav">
-    <div class="logo">
+    <div class="logo" aria-label="Homepage logo">
       SI<span>.</span>
     </div>
-    <nav>
+    <nav aria-label="Primary navigation">
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
@@ -31,14 +40,14 @@
     </nav>
   </header>
 
-  <main>
+  <main id="top">
     <!-- HERO -->
-    <section class="section hero" id="top">
+    <section class="section hero" aria-labelledby="hero-title">
       <div class="hero-content">
         <p class="tag">Aspiring Cybersecurity Analyst</p>
-        <h1>Shaikh <span>Ibrahim</span></h1>
+        <h1 id="hero-title">Shaikh <span>Ibrahim</span></h1>
         <p class="hero-sub">
-          M.Sc Computer Security student focusing on network security, IAM, SOC operations, and incident response through ISC2, Cisco, and hands‑on labs.
+          M.Sc Computer Security student focusing on network security, IAM, SOC operations, and incident response through ISC2, Cisco, and hands-on labs.
         </p>
         <div class="hero-actions">
           <a href="#projects" class="btn primary">View Projects</a>
@@ -50,7 +59,7 @@
         </div>
       </div>
 
-      <div class="hero-orbit">
+      <div class="hero-orbit" aria-hidden="true">
         <div class="orbit-ring ring-1"></div>
         <div class="orbit-ring ring-2"></div>
         <div class="orbit-node node-1"></div>
@@ -60,20 +69,20 @@
     </section>
 
     <!-- ABOUT -->
-    <section class="section" id="about">
-      <h2 class="section-title">About</h2>
+    <section class="section" id="about" aria-labelledby="about-title">
+      <h2 class="section-title" id="about-title">About</h2>
       <p class="section-text">
         Aspiring cybersecurity analyst with an M.Sc in Computer Security, building skills in network security, identity and access management (IAM),
-        SOC operations, and incident response through ISC2, Cisco, and virtual labs. Eager to apply and grow these skills in entry‑level
+        SOC operations, and incident response through ISC2, Cisco, and virtual labs. Eager to apply and grow these skills in entry-level
         cybersecurity roles and internships.
       </p>
     </section>
 
     <!-- SKILLS -->
-    <section class="section" id="skills">
-      <h2 class="section-title">Skills</h2>
+    <section class="section" id="skills" aria-labelledby="skills-title">
+      <h2 class="section-title" id="skills-title">Skills</h2>
       <div class="cards-grid">
-        <div class="card">
+        <article class="card">
           <h3>Cybersecurity</h3>
           <ul>
             <li>Network security fundamentals</li>
@@ -82,180 +91,172 @@
             <li>Basic incident response &amp; documentation</li>
             <li>Security labs and simulations</li>
           </ul>
-        </div>
+        </article>
 
-        <div class="card">
+        <article class="card">
           <h3>Development &amp; Tools</h3>
           <ul>
-            <li>Security‑focused mobile app concepts</li>
+            <li>Security-focused mobile app concepts</li>
             <li>API integration for security &amp; data</li>
             <li>Dashboard and UI planning</li>
             <li>Git &amp; GitHub</li>
           </ul>
-        </div>
+        </article>
 
-        <div class="card">
+        <article class="card">
           <h3>Languages &amp; General</h3>
           <ul>
             <li>English – Fluent</li>
             <li>Hindi – Native</li>
             <li>Telugu – Basic</li>
-            <li>Technical research &amp; self‑learning</li>
+            <li>Technical research &amp; self-learning</li>
             <li>Clear written &amp; verbal communication</li>
           </ul>
-        </div>
+        </article>
       </div>
     </section>
 
     <!-- PROJECTS -->
-    <section class="section" id="projects">
-      <h2 class="section-title">Projects</h2>
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <h2 class="section-title" id="projects-title">Projects</h2>
       <div class="cards-grid">
-        <!-- PhishBuster AR -->
-        <div class="card project-card">
-          <div class="card-accent"></div>
+        <article class="card project-card">
+          <div class="card-accent" aria-hidden="true"></div>
           <h3>PhishBuster AR</h3>
           <p class="project-tag">Cybersecurity Mobile Tool · 2025 – Present</p>
           <p class="project-text">
-            Augmented reality‑based security concept designed to detect and prevent phishing attempts by analyzing suspicious URLs, emails, and risky apps in real time.
+            Augmented reality-based security concept designed to detect and prevent phishing attempts by analyzing suspicious URLs, emails, and risky apps in real time.
           </p>
           <ul class="project-list">
-            <li>Planned integration of security validation APIs to improve detection accuracy and reliability.</li>
-            <li>Designed AR‑based risk visualization for instant threat awareness.</li>
+            <li>Planned integration of security validation APIs to improve detection accuracy.</li>
+            <li>Designed AR-based risk visualization for instant threat awareness.</li>
           </ul>
           <p class="project-tech">
-            Focus: Phishing detection · Security APIs · AR‑based awareness
+            Focus: Phishing detection · Security APIs · AR-based awareness
           </p>
-        </div>
+        </article>
 
-        <!-- SkyCast -->
-        <div class="card project-card">
-          <div class="card-accent"></div>
+        <article class="card project-card">
+          <div class="card-accent" aria-hidden="true"></div>
           <h3>SkyCast</h3>
           <p class="project-tag">Weather Forecasting App · 2025</p>
           <p class="project-text">
-            Machine learning‑based weather forecasting concept using real‑time meteorological APIs to deliver accurate climate predictions and live updates.
+            Machine learning-based weather forecasting concept using real-time meteorological APIs to deliver accurate climate predictions.
           </p>
           <ul class="project-list">
             <li>Planned live forecast integration and automated alert notifications.</li>
-            <li>Designed user‑friendly dashboard UI for hourly and weekly insights.</li>
+            <li>Designed user-friendly dashboard UI for insights.</li>
           </ul>
           <p class="project-tech">
-            Focus: Real‑time APIs · Data visualization · Alerts
+            Focus: Real-time APIs · Data visualization · Alerts
           </p>
-        </div>
+        </article>
       </div>
     </section>
 
     <!-- EXPERIENCE -->
-    <section class="section" id="experience">
-      <h2 class="section-title">Experience</h2>
+    <section class="section" id="experience" aria-labelledby="experience-title">
+      <h2 class="section-title" id="experience-title">Experience</h2>
       <div class="timeline">
-        <div class="timeline-item">
+        <article class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
             <h3>Cybersecurity Student – SOC &amp; IAM Focus</h3>
             <p class="timeline-meta">
-              Self‑directed Learning · ISC2, Cisco NetAcad, Forage, IBM · Sep 2025 – Present · Remote
+              Self-directed Learning · ISC2, Cisco NetAcad, Forage, IBM · Sep 2025 – Present · Remote
             </p>
             <ul>
-              <li>Studying SOC operations, network security, and IAM with structured training content.</li>
-              <li>Practising log analysis and basic incident response in simulated environments.</li>
-              <li>Creating IAM plans for example enterprises with a focus on access control.</li>
+              <li>Studying SOC operations, network security, and IAM.</li>
+              <li>Practising log analysis and basic incident response.</li>
+              <li>Creating IAM plans for example enterprises.</li>
             </ul>
           </div>
-        </div>
+        </article>
       </div>
     </section>
 
     <!-- EDUCATION -->
-    <section class="section" id="education">
-      <h2 class="section-title">Education</h2>
+    <section class="section" id="education" aria-labelledby="education-title">
+      <h2 class="section-title" id="education-title">Education</h2>
       <div class="cards-grid">
-        <div class="card">
+        <article class="card">
           <h3>M.Sc Computer Security</h3>
-          <p class="edu-meta">
-            University College of Science, Osmania University · Nov 2023 – Present
-          </p>
+          <p class="edu-meta">University College of Science, Osmania University · Nov 2023 – Present</p>
           <p>Relevant coursework: Computer Networks, Operating Systems, Cybersecurity Fundamentals.</p>
-        </div>
+        </article>
 
-        <div class="card">
+        <article class="card">
           <h3>B.Sc Computer Science</h3>
-          <p class="edu-meta">
-            Kakatiya University · Aug 2020 – Aug 2023 · GPA 7.16
-          </p>
+          <p class="edu-meta">Kakatiya University · Aug 2020 – Aug 2023 · GPA 7.16</p>
           <p>Relevant coursework: Mathematics, Physics.</p>
-        </div>
+        </article>
       </div>
     </section>
 
     <!-- CERTIFICATIONS -->
-    <section class="section" id="certifications">
-      <h2 class="section-title">Certifications</h2>
+    <section class="section" id="certifications" aria-labelledby="certifications-title">
+      <h2 class="section-title" id="certifications-title">Certifications</h2>
       <div class="cards-grid">
-        <div class="card">
+        <article class="card">
           <h3>ISC2 Certified in Cybersecurity (CC)</h3>
-          <p>Training in progress · Nov 2025 · ISC2.</p>
-        </div>
+          <p>Training in progress · Nov 2025 · ISC2</p>
+        </article>
 
-        <div class="card">
+        <article class="card">
           <h3>CC – Network Security</h3>
-          <p>Nov 2025 · ISC2.</p>
-        </div>
+          <p>Nov 2025 · ISC2</p>
+        </article>
 
-        <div class="card">
+        <article class="card">
           <h3>Deloitte Australia Virtual Experience</h3>
-          <p>Forage · Nov 2025.</p>
-        </div>
+          <p>Forage · Nov 2025</p>
+        </article>
       </div>
     </section>
 
     <!-- CONTACT -->
-    <section class="section" id="contact">
-      <h2 class="section-title">Contact</h2>
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <h2 class="section-title" id="contact-title">Contact</h2>
       <p class="section-text">
-        Open to internships and entry‑level cybersecurity roles, especially in SOC, IAM, and security operations.
+        Open to internships and entry-level cybersecurity roles, especially in SOC, IAM, and security operations.
       </p>
       <div class="contact-grid">
         <div>
           <p><strong>Email</strong><br />
             <a href="mailto:shoaibibrahim970@outlook.com">shoaibibrahim970@outlook.com</a>
           </p>
-          <p><strong>Location</strong><br />
-            Koti, Hyderabad, Telangana, India
-          </p>
+          <p><strong>Location</strong><br />Hyderabad, Telangana, India</p>
         </div>
         <div>
           <p><strong>Phone</strong><br />
             <a href="tel:+918919574465">+91 89195 74465</a>
           </p>
           <p><strong>LinkedIn</strong><br />
-            <a href="https://www.linkedin.com/in/shaikh-ibrahim17" target="_blank" rel="noreferrer">
+            <a href="https://www.linkedin.com/in/shaikh-ibrahim17" target="_blank" rel="noopener noreferrer">
               linkedin.com/in/shaikh-ibrahim17
             </a>
           </p>
-          <!-- Add GitHub when ready -->
         </div>
       </div>
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer class="footer">
-    <span>© 2025 Shaikh Ibrahim · Built with GitHub Pages</span>
+    © 2025 Shaikh Ibrahim · Built with GitHub Pages
   </footer>
 
+  <!-- INTERSECTION OBSERVER -->
   <script>
-    // Simple scroll reveal
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1 });
+    const observer = new IntersectionObserver(
+      entries => entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      }),
+      { threshold: 0.1 }
+    );
 
-    document.querySelectorAll('.section').forEach((sec) => observer.observe(sec));
+    document.querySelectorAll('.section').forEach(section => observer.observe(section));
   </script>
 </body>
 </html>
+
