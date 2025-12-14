@@ -508,3 +508,20 @@ button:focus-visible,
     padding-top: calc(var(--nav-height) - 0.5rem);
   }
 }
+
+/* ENHANCED ARC REACTOR ANIMATIONS */
+.hero-orbit { box-shadow: 0 0 40px rgba(0, 245, 255, 0.4), inset 0 0 40px rgba(0, 245, 255, 0.2); animation: reactorSpin 18s linear infinite, reactorPulse 3s ease-in-out infinite, reactorGlow 4s ease-in-out infinite; }
+@keyframes reactorGlow { 0%,100% { filter: brightness(1) drop-shadow(0 0 20px rgba(0, 245, 255, 0.6)); } 50% { filter: brightness(1.1) drop-shadow(0 0 40px rgba(176, 38, 255, 0.8)); } }
+@keyframes orbitNodeGlow { 0%,100% { box-shadow: 0 0 18px currentColor, 0 0 36px currentColor; } 50% { box-shadow: 0 0 28px currentColor, 0 0 56px currentColor, 0 0 80px currentColor; } } .orbit-node { animation-name: orbitNodeGlow; }
+/* ENHANCED CARD INTERACTIONS */ .card { transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease-out; }
+.card:hover { transform: translateY(-6px) scale(1.02); box-shadow: 0 12px 40px rgba(0, 245, 255, 0.25), inset 0 0 30px rgba(0, 245, 255, 0.1); border-color: rgba(0, 245, 255, 0.6); }
+/* ENHANCED SCROLL ANIMATIONS */ .section { animation: sectionSlideIn 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) backwards; }
+@keyframes sectionSlideIn { 0% { opacity: 0; transform: translateY(40px); } 100% { opacity: 1; transform: translateY(0); } }
+/* ENHANCED MOBILE RESPONSIVENESS */ @media (max-width: 1024px) { .hero { grid-template-columns: 1fr; gap: 3rem; } .hero-orbit { width: 280px; height: 280px; } .cards-grid { grid-template-columns: repeat(2, 1fr); } main { padding: calc(var(--nav-height) + 2rem) var(--space-md) 3rem; } }
+@media (max-width: 768px) { .hero-content h1 { font-size: 2rem; } .hero { gap: 2rem; } .hero-orbit { width: 240px; height: 240px; } .cards-grid { grid-template-columns: 1fr; } .hero-actions { flex-wrap: wrap; } .section { padding: 1.8rem var(--space-md); } .section-title { font-size: 1.2rem; } }
+@media (max-width: 480px) { .hero-content h1 { font-size: 1.6rem; margin-top: 0.5rem; } main { padding: calc(var(--nav-height) + 1rem) 1rem 2rem; max-width: 100%; } .section { margin-top: 2.5rem; padding: 1.4rem 1rem; } .hero-actions { gap: 0.6rem; } .btn { padding: 0.5rem 1rem; font-size: 0.8rem; } .tag { font-size: 0.7rem; padding: 0.15rem 0.6rem; } .hero-orbit { width: 200px; height: 200px; margin-top: 1.5rem; } .cards-grid { gap: 1rem; margin-top: 1rem; } .contact-grid { grid-template-columns: 1fr; gap: 1rem; } }
+/* ENHANCED TEXT AND LINK ANIMATIONS */ a, .btn { transition: color 0.25s ease, text-decoration-color 0.25s ease; } a:hover { text-decoration-color: var(--primary); } h1, h2, h3 { transition: color 0.3s ease, text-shadow 0.3s ease; }
+/* HERO SECTION ENHANCEMENTS */ .hero-content h1 { animation: titleGlow 3s ease-in-out infinite; } @keyframes titleGlow { 0%, 100% { text-shadow: 0 0 10px rgba(0, 245, 255, 0.2); } 50% { text-shadow: 0 0 20px rgba(0, 245, 255, 0.4), 0 0 30px rgba(176, 38, 255, 0.2); } }
+/* BUTTON GLOW EFFECTS */ .btn.primary { position: relative; overflow: hidden; } .btn.primary::before { content: ''; position: absolute; top: 50%; left: 50%; width: 0; height: 0; border-radius: 50%; background: rgba(255, 255, 255, 0.3); transform: translate(-50%, -50%); transition: width 0.6s, height 0.6s; } .btn.primary:active::before { width: 300px; height: 300px; }
+/* STAGGERED CARD ANIMATIONS */ .cards-grid .card { animation: cardStagger 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both; } .cards-grid .card:nth-child(1) { animation-delay: 0.1s; } .cards-grid .card:nth-child(2) { animation-delay: 0.2s; } .cards-grid .card:nth-child(3) { animation-delay: 0.3s; } .cards-grid .card:nth-child(4) { animation-delay: 0.4s; } @keyframes cardStagger { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+/* IMPROVED NAV MOBILE */ @media (max-width: 600px) { .nav { height: 56px; padding: 0 1rem; } .logo { font-size: 1.1rem; } .nav-mobile { gap: 1rem; } .nav-mobile a { font-size: 1rem; } }
