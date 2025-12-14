@@ -587,7 +587,7 @@ button:focus-visible,
       transparent 4deg 12deg
     );
   mask-image: radial-gradient(circle at center, transparent 0 30%, black 31% 100%);
-  animation: dataSweep 4s linear infinite;
+/* animation: dataSweep 4s linear infinite; */ animation: none;
 }
 
 /* ARC REACTOR ANIMATIONS */
