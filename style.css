@@ -525,3 +525,99 @@ button:focus-visible,
 /* BUTTON GLOW EFFECTS */ .btn.primary { position: relative; overflow: hidden; } .btn.primary::before { content: ''; position: absolute; top: 50%; left: 50%; width: 0; height: 0; border-radius: 50%; background: rgba(255, 255, 255, 0.3); transform: translate(-50%, -50%); transition: width 0.6s, height 0.6s; } .btn.primary:active::before { width: 300px; height: 300px; }
 /* STAGGERED CARD ANIMATIONS */ .cards-grid .card { animation: cardStagger 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both; } .cards-grid .card:nth-child(1) { animation-delay: 0.1s; } .cards-grid .card:nth-child(2) { animation-delay: 0.2s; } .cards-grid .card:nth-child(3) { animation-delay: 0.3s; } .cards-grid .card:nth-child(4) { animation-delay: 0.4s; } @keyframes cardStagger { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 /* IMPROVED NAV MOBILE */ @media (max-width: 600px) { .nav { height: 56px; padding: 0 1rem; } .logo { font-size: 1.1rem; } .nav-mobile { gap: 1rem; } .nav-mobile a { font-size: 1rem; } }
+
+
+/* JARVIS ARC REACTOR - STARK INDUSTRIES INSPIRED */
+
+/* ARC REACTOR CORE */
+.reactor-core {
+  position: absolute;
+  inset: 35%;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at center,
+      rgba(255,255,255,0.95) 0,
+      #00f5ff 30%,
+      #02030a 70%);
+  box-shadow:
+    0 0 25px rgba(0,245,255,0.9),
+    0 0 60px rgba(0,245,255,0.8);
+  animation: corePulse 2.4s ease-in-out infinite;
+}
+
+/* RINGS AROUND CORE */
+.reactor-ring {
+  position: absolute;
+  inset: 12%;
+  border-radius: 50%;
+  border: 2px solid rgba(0,245,255,0.45);
+  box-shadow: 0 0 18px rgba(0,245,255,0.6);
+  mix-blend-mode: screen;
+}
+
+.ring-inner {
+  inset: 22%;
+  border-style: dashed;
+  animation: ringSpinSlow 10s linear infinite;
+}
+
+.ring-middle {
+  inset: 14%;
+  border-color: rgba(176,38,255,0.7);
+  border-style: dotted;
+  animation: ringSpinFast 6s linear infinite reverse;
+}
+
+.ring-outer {
+  inset: 6%;
+  border-width: 3px;
+  border-color: rgba(0,245,255,0.35);
+  animation: ringSpinSlow 14s linear infinite;
+}
+
+/* RADIAL LINES / DATA SPOKES */
+.reactor-lines {
+  position: absolute;
+  inset: 10%;
+  border-radius: 50%;
+  background:
+    repeating-conic-gradient(
+      from 0deg,
+      rgba(0,245,255,0.15) 0deg 4deg,
+      transparent 4deg 12deg
+    );
+  mask-image: radial-gradient(circle at center, transparent 0 30%, black 31% 100%);
+  animation: dataSweep 4s linear infinite;
+}
+
+/* ARC REACTOR ANIMATIONS */
+@keyframes corePulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow:
+      0 0 22px rgba(0,245,255,0.8),
+      0 0 50px rgba(0,245,255,0.7);
+  }
+  50% {
+    transform: scale(1.06);
+    box-shadow:
+      0 0 32px rgba(176,38,255,0.9),
+      0 0 80px rgba(0,245,255,0.9);
+  }
+}
+
+@keyframes ringSpinSlow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes ringSpinFast {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(-360deg); }
+}
+
+@keyframes dataSweep {
+  0%   { transform: rotate(0deg); opacity: 0.7; }
+  50%  { opacity: 1; }
+  100% { transform: rotate(360deg); opacity: 0.7; }
+      }
